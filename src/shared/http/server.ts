@@ -7,8 +7,10 @@ import AppError from "@shared/errors/AppError";
 import '@shared/typeorm'
 import '@shared/container';
 import {errors} from "celebrate";
+import {Logger} from "tslog";
 
 const app = express();
+const log = new Logger();
 
 app.use(cors());
 app.use(express.json());
@@ -31,6 +33,6 @@ app.use((error: Error, request: Request, response: Response) => {
 });
 
 app.listen(3333, () => {
-    console.log("Server started on port 3333!")
+    log.info("Server started on port 3333!");
 })
 

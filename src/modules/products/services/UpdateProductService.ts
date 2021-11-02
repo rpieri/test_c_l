@@ -3,12 +3,16 @@ import {IProductsRepository} from "@modules/products/domain/repositories/IProduc
 import {IUpdateProduct} from "@modules/products/domain/models/IUpdateProduct";
 import {IProduct} from "@modules/products/domain/models/IProduct";
 import AppError from "@shared/errors/AppError";
+import {ICreateEventProductService} from "@modules/event_products/services/ICreateEventProductService";
+import {OperationEnum} from "@modules/event_products/enums/OperationEnum";
 
 @injectable()
 class UpdateProductService {
     constructor(
         @inject('ProductsRepository')
         private productsRepository: IProductsRepository,
+        @inject('CreateEventProductService')
+        private createEventProductService: ICreateEventProductService
     ) {}
 
     public async execute({
@@ -34,7 +38,6 @@ class UpdateProductService {
         product.quantity = quantity;
 
         await this.productsRepository.save(product);
-
         return product;
     }
 }
