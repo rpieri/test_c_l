@@ -28,11 +28,6 @@ export class CreateProducts1635567059346 implements MigrationInterface {
                     type: 'int'
                 },
                 {
-                    name:'integrated_id',
-                    type: 'uuid',
-                    isNullable: true
-                },
-                {
                     name:'created_at',
                     type: 'timestamp with time zone',
                     default: 'now()'

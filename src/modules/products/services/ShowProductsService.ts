@@ -5,7 +5,7 @@ import {IProduct} from "@modules/products/domain/models/IProduct";
 import AppError from "@shared/errors/AppError";
 
 @injectable()
-class ShowProductService {
+class ShowProductsService {
     constructor(
         @inject('ProductsRepository')
         private productsRepository: IProductsRepository,
@@ -22,4 +22,4 @@ class ShowProductService {
     }
 }
 
-export default ShowProductService;
+export default ShowProductsService;

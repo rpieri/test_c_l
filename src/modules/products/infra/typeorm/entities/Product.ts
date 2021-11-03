@@ -14,9 +14,6 @@ class Product {
     @Column('int')
     quantity: number;
 
-    @Column()
-    integrated_id?: string;
-
     @CreateDateColumn()
     created_at: Date;
 
