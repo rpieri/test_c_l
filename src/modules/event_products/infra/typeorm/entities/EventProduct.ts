@@ -1,5 +1,5 @@
 import {Column, CreateDateColumn, Entity, PrimaryGeneratedColumn} from "typeorm";
-import {OperationEnum} from "@modules/event_products/enums/OperationEnum";
+import {OperationEnum} from "../../../enums/OperationEnum";
 
 @Entity('event_product')
 class EventProduct {
