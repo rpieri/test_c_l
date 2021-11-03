@@ -21,10 +21,10 @@ class IntegrateThirdPartyService implements IIntegrateThirdPartyService {
             const events = await this.repository.findAllByExecuted();
 
             for (const event of events) {
-                this.log.info(`Start integration of product: ${event.name}`);
+                this.log.info(`Start integration of product: ${event.product_id}`);
                 const sendService = this.factory.factory(event.operation);
                 await sendService.send(event);
-                this.log.info(`Finished integration of product: ${event.name}`);
+                this.log.info(`Finished integration of product: ${event.product_id}`);
             }
         }catch (e){
             this.log.fatal(e);
